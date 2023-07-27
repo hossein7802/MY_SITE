@@ -7,10 +7,10 @@
     font-style: normal;
 } */
 
-* {
+/* * {
     direction: rtl;
-    /* font-family: "BYekan"; */
-}
+    font-family: "BYekan";
+} */
 
 @media(min-width:600px) {
     .top_navbar {
@@ -64,8 +64,4 @@ table.highlight>tbody>tr:hover {
 .add_user_modal.show {
     box-shadow: 0 0 10px blue;
     bottom: 0;
-}
-
-.sidenav_link_icon {
-    margin: 0 0 0 25px !important;
 }

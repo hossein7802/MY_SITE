@@ -6,23 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/front-end/TEST1/assets/materialize/css/materialize.min.css">
-    <link rel="stylesheet" href="/front-end/TEST1/assets/materialize/css/materialize-rtl.css">
     <link rel="stylesheet" href="/front-end/TEST1/assets/css/util.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <link rel="stylesheet" href="/front-end/TEST1/assets/materialize/css/icons.css">
     <link rel="stylesheet" href="/front-end/TEST1/assets/css/style.css">
-    <link rel="icon" href="/front-end/TEST1/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="/front-end/TEST1/assets/images/favicon.ico">
     <title>MY_PROJECT</title>
 </head>
 
-<body dir="rtl">
+<body>
 
     <!-- ---navbar-sevtion------start------------ -->
     <nav class="white z-depth-0 top_navbar">
         <div class="nav-wrapper">
             <a href="#!" class="blue-text hide-on-med-and-up">Users Management</a>
-            <a href="#!" data-target="mobile-demo" class="sidenav-trigger blue-text right"><i
+            <a href="#!" data-target="mobile-demo" class="sidenav-trigger blue-text"><i
                     class="material-icons ">menu</i></a>
-            <ul class="right hide-on-med-and-down dis-flex">
+            <ul class="hide-on-med-and-down">
                 <li><a href="/" class="blue-text">Home</a></li>
                 <li><a href="/front-end/TEST1/users.html" class="blue-text">User Management</a></li>
                 <li><a href="https://codeyad.com" class="blue-text">Codeyad</a></li>
@@ -44,8 +44,8 @@
             </div>
         </li>
         <li><a href="https://www.youtube.com/channel/UC7_WFOLcQ4x9HCat_pE3hcA"><i
-                    class="material-icons right sidenav_link_icon">insert_link</i>AQ Fast Learn</a></li>
-        <li><a href="https://codeyad.com"><i class="material-icons right sidenav_link_icon">insert_link</i>Codeyad</a>
+                    class="material-icons">insert_link</i>AQ Fast Learn</a></li>
+        <li><a href="https://codeyad.com"><i class="material-icons">insert_link</i>Codeyad</a>
         </li>
         <li>
             <div class="divider"></div>
@@ -206,7 +206,6 @@
             </table>
         </div>
 
-
         <div
             class="pagination_container container p-l-9 p-r-9 p-t-15 p-b-10 flex-sb-m pos-fixed left-0 right-0 bottom-0 z-depth-4 rounded_top_30">
 
@@ -221,14 +220,21 @@
 
             <div class="pagination_buttons">
                 <i
-                    class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_right</i>
-                <i
                     class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_left</i>
+                <i
+                    class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_right</i>
             </div>
 
         </div>
 
 
+    </section>
+
+
+    <section id="test_section" class="grey" x-data="{message: 'I Love Programming'}">
+        111
+        <span x-text="message" class="red"></span>
+        <button class="btn" x-on:click="message = 'I Love Alpine'">click</button>
     </section>
 
 
@@ -266,6 +272,9 @@
     <!-- ---content-sevtion------end------------ -->
 
 
+
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
+    <script defer src="/front-end/TEST1/assets/js/alpine.js"></script>
     <script src="/front-end/TEST1/assets/materialize/js/materialize.min.js"></script>
     <script src="/front-end/TEST1/assets/js/app.js"></script>
     <script src="/front-end/TEST1/assets/js/users.js"></script>

@@ -5,22 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY_PROJECT</title>
     <link rel="stylesheet" href="/front-end/TEST1/assets/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="/front-end/TEST1/assets/materialize/css/materialize-rtl.css">
     <link rel="stylesheet" href="/front-end/TEST1/assets/css/util.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/front-end/TEST1/assets/css/style.css">
+    <link rel="icon" href="/front-end/TEST1/assets/images/favicon.ico" type="image/x-icon">
+    <title>MY_PROJECT</title>
 </head>
 
-<body>
+<body dir="rtl">
 
     <!-- ---navbar-sevtion------start------------ -->
     <nav class="white z-depth-0 top_navbar">
         <div class="nav-wrapper">
             <a href="#!" class="blue-text hide-on-med-and-up">Users Management</a>
-            <a href="#!" data-target="mobile-demo" class="sidenav-trigger blue-text"><i
-                    class="material-icons">menu</i></a>
-            <ul class="hide-on-med-and-down">
+            <a href="#!" data-target="mobile-demo" class="sidenav-trigger blue-text right"><i
+                    class="material-icons ">menu</i></a>
+            <ul class="right hide-on-med-and-down dis-flex">
                 <li><a href="/" class="blue-text">Home</a></li>
                 <li><a href="/front-end/TEST1/users.html" class="blue-text">User Management</a></li>
                 <li><a href="https://codeyad.com" class="blue-text">Codeyad</a></li>
@@ -42,8 +44,9 @@
             </div>
         </li>
         <li><a href="https://www.youtube.com/channel/UC7_WFOLcQ4x9HCat_pE3hcA"><i
-                    class="material-icons">insert_link</i>AQ Fast Learn</a></li>
-        <li><a href="https://codeyad.com"><i class="material-icons">insert_link</i>Codeyad</a></li>
+                    class="material-icons right sidenav_link_icon">insert_link</i>AQ Fast Learn</a></li>
+        <li><a href="https://codeyad.com"><i class="material-icons right sidenav_link_icon">insert_link</i>Codeyad</a>
+        </li>
         <li>
             <div class="divider"></div>
         </li>
@@ -218,9 +221,9 @@
 
             <div class="pagination_buttons">
                 <i
-                    class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_left</i>
-                <i
                     class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_right</i>
+                <i
+                    class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_left</i>
             </div>
 
         </div>
@@ -230,7 +233,7 @@
 
 
     <div class="add_user_modal_back dis-none"></div>
-    <div class="add_user_modal container rounded_top_30 trans-0-1">
+    <div class="add_user_modal container rounded_top_30 trans-0-3">
         <div class="row p-t-10 p-b-10 p-r-40 p-l-40 center-on-small-only">
             <h5>
                 <i class="material-icons m-r-10 m-l-10 pos-relative top-4">person_add</i>
@@ -264,7 +267,7 @@
 
 
     <script src="/front-end/TEST1/assets/materialize/js/materialize.min.js"></script>
-    <script src="/front-end/TEST1/assets/js/main.js"></script>
+    <script src="/front-end/TEST1/assets/js/app.js"></script>
     <script src="/front-end/TEST1/assets/js/users.js"></script>
 </body>
 

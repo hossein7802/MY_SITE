@@ -14,7 +14,7 @@
     <title>MY_PROJECT</title>
 </head>
 
-<body>
+<body x-data="usersData">
 
     <!-- ---navbar-sevtion------start------------ -->
     <nav class="white z-depth-0 top_navbar">
@@ -86,7 +86,7 @@
 
     </section>
 
-    <section class="user_list_section">
+    <section class="user_list_section" x-init="getUsers()">
         <ul class="collapsible hide-on-med-and-up">
             <li class="users_list_item">
                 <div class="collapsible-header">
@@ -158,50 +158,19 @@
 
 
                 <tbody class="desktop_table_body">
-                    <tr>
-                        <td>1</td>
-                        <td>Hossein Azimi</td>
-                        <td>Hossein</td>
-                        <td>Hossein@gamil.com</td>
-                        <td>berlin - example street ...</td>
-                        <td>
-                            <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
-                            <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forevr</i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Hossein Azimi</td>
-                        <td>Hossein</td>
-                        <td>Hossein@gamil.com</td>
-                        <td>berlin - example street ...</td>
-                        <td>
-                            <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
-                            <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forevr</i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Hossein Azimi</td>
-                        <td>Hossein</td>
-                        <td>Hossein@gamil.com</td>
-                        <td>berlin - example street ...</td>
-                        <td>
-                            <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
-                            <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forevr</i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Hossein Azimi</td>
-                        <td>Hossein</td>
-                        <td>Hossein@gamil.com</td>
-                        <td>berlin - example street ...</td>
-                        <td>
-                            <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
-                            <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forevr</i>
-                        </td>
-                    </tr>
+                    <template x-for="user in users">
+                        <tr>
+                            <td x-text="user.id"></td>
+                            <td x-text="user.name"></td>
+                            <td x-text="user.username"></td>
+                            <td x-text="user.email"></td>
+                            <td x-text="user.address.city+' - '+user.address.street"></td>
+                            <td>
+                                <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
+                                <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forevr</i>
+                            </td>
+                        </tr>
+                    </template>
                 </tbody>
             </table>
         </div>
@@ -230,12 +199,6 @@
 
     </section>
 
-
-    <section id="test_section" class="grey" x-data="mainData()">
-        111
-        <span x-text="message" class="red"></span>
-        <button class="btn" x-on:click="testFunc()">click</button>
-    </section>
 
 
     <div class="add_user_modal_back dis-none"></div>
@@ -273,9 +236,10 @@
 
 
 
+    <script src="/front-end/TEST1/assets/js/axios.js"></script>
     <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
     <script defer src="/front-end/TEST1/assets/js/alpine.js"></script>
-    <script src="/front-end/TEST1/assets/js/alpineJsContollers/mainContoller.js"></script>
+    <script src="/front-end/TEST1/assets/js/alpineJsContollers/usersContoller.js"></script>
     <script src="/front-end/TEST1/assets/materialize/js/materialize.min.js"></script>
     <script src="/front-end/TEST1/assets/js/app.js"></script>
     <script src="/front-end/TEST1/assets/js/users.js"></script>

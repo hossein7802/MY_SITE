@@ -24,7 +24,7 @@
                     class="material-icons ">menu</i></a>
             <ul class="hide-on-med-and-down">
                 <li><a href="/" class="blue-text">Home</a></li>
-                <li><a href="/front-end/TEST1/users.html" class="blue-text">User Management</a></li>
+                <li><a href="/front-end/TEST1/users.html" class="blue-text">Users Management</a></li>
                 <li><a href="https://codeyad.com" class="blue-text">Codeyad</a></li>
                 <li><a href="https://www.youtube.com/channel/UC7_WFOLcQ4x9HCat_pE3hcA" class="blue-text">AQ Fast
                         Learn</a></li>
@@ -176,16 +176,19 @@
         <div
             class="pagination_container container p-l-9 p-r-9 p-t-15 p-b-10 flex-sb-m pos-fixed left-0 right-0 bottom-0 z-depth-4 rounded_top_30">
 
-            <div class="parallax-item_counts flex-l p-l-10 flex-l-m">
+            <div class="pagination_item_counts flex-l p-l-10 flex-l-m">
                 Showing
-                <span class="m-l-5 m-r-5 max-w-50">
-                    <input type="number" class="blue-text darken-2 no-border center-align m-b-0" value="10">
+                <span class="m-l-5 m-r-5 max-w-50 pos-relative top-4"
+                    x-init="$watch('itemsCount', (value)=>handleChangeItemsCount(value))">
+                    <input type="number" class="blue-text darken-2 no-border center-align m-b-0" x-model="itemsCount"
+                        x-on:change="pagination()">
                 </span>
                 of
-                <span class="blue-text darken-2 m-l-5 m-r-5">100</span>
+                <span class="blue-text darken-2 m-l-5 m-r-5" x-text="users.length">100</span>
+
             </div>
 
-            <strong x-text="currentPage" class="page_number blue-text"></strong>
+            <strong x-text="currentPage" class="blue-text page_number"></strong>
 
             <div class="pagination_buttons">
                 <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill"
@@ -204,7 +207,6 @@
 
     <div class="add_user_modal_back" x-show="showAddModal" x-transition x-on:click="showAddModal = false">
     </div>
-    <!-- {'show' : showAddModal} -->
     <div class="add_user_modal container rounded_top_30 trans-0-3" x-bind:class="showAddModal && 'show'">
         <div class="row p-t-10 p-b-10 p-r-40 p-l-40 center-on-small-only">
             <h5>

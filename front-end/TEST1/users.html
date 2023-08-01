@@ -72,8 +72,8 @@
         </div>
         <!-- ---search-section------ -->
         <div class="row col s12 m9 l8 m-b-5">
-            <div class="input-field col s12">
-                <input id="search" type="text" class="validate">
+            <div class="input-field col s12" x-init="$watch('searchChar', (value)=>handleSearch(value))">
+                <input id="search" type="text" class="validate" x-model="searchChar">
                 <label for="search">
                     <i class="material-icons pos-relative top-7">search</i>
                     Search
@@ -88,25 +88,25 @@
     </section>
 
 
-    <!-- <template x-if="isLoading"> -->
+    <template x-if="isLoading">
 
-    <div x-show="isLoading" class="center-align">
-        <div class="preloader-wrapper small active">
-            <div class="spinner-layer spinner-green-only">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div>
-                <div class="gap-patch">
-                    <div class="circle"></div>
-                </div>
-                <div class="circle-clipper right">
-                    <div class="circle"></div>
+        <div x-show="isLoading" class="center-align">
+            <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-green-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- </template> -->
+    </template>
 
     <section class="user_list_section" x-init="getUsers()">
         <ul class="collapsible hide-on-med-and-up">

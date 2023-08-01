@@ -132,7 +132,8 @@
                         </div>
                         <div class="p-all-5 flex-l-m">
                             <span class="f-bold">Action : </span>
-                            <i class="material-icons red-text m-l-5 m-r-5">delete_forevr</i>
+                            <i class="material-icons red-text m-l-5 m-r-5"
+                                x-on:click="handleDeleteUser(user.id)">delete_forevr</i>
                             <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
                         </div>
                     </div>
@@ -165,7 +166,8 @@
                             <td x-text="(user.address?.city || '') + ' - ' + (user.address?.street || '')"></td>
                             <td>
                                 <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
-                                <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forevr</i>
+                                <i class="material-icons red-text m-l-5 m-r-5 hov-pointer"
+                                    x-on:click="handleDeleteUser(user.id)">delete_forevr</i>
                             </td>
                         </tr>
                     </template>

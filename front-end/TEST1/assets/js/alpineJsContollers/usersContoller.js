@@ -59,7 +59,7 @@ document.addEventListener('alpine:init', () => {
                     this.showAddModal = false
                     this.handleResetForm()
                     this.pagination()
-                    M.toast({ html: '! کاربر با موفقیت ایجاد شد', classes: 'rounded green' });
+                    M.toast({ html: 'User Created Successfully !', classes: 'green' });
                 }
             }).finally(() => {
                 this.isLoading = false
@@ -71,6 +71,23 @@ document.addEventListener('alpine:init', () => {
                 username: "",
                 email: "",
             }
+        },
+        handleDeleteUser(userId) {
+            var toastHTML = '<span>Are You Sure ? (' + userId + ')</span><button class="btn-flat toast-action" x-on:click="handleConfirmDeleteUser(' + userId + ')">Delete</button>';
+            M.toast({ html: toastHTML });
+        },
+        handleConfirmDeleteUser(userId) {
+            this.isLoading = true
+            axios.delete("https://jsonplaceholder.typicode.com/users/" + userId).then((res) => {
+                if (res.status === 200) {
+                    this.mainUsers = this.mainUsers.filter(user => user.id != userId)
+                    this.users = this.users.filter(user => user.id != userId)
+                    this.pagination()
+                    M.toast({ html: 'User Delete Successfully !', classes: 'red' });
+                }
+            }).finally(() => {
+                this.isLoading = false
+            })
         }
     }))
 })
